@@ -60,7 +60,26 @@ import {startWith} from "rxjs/operators";
         <div class="logo">Chatroom </div>
         <button on:click={logout}>Logout</button>
     </div>
-    <div class="messages"></div>
+    <div class="messages">
+        {#each $chats as chat}
+            {#if user.uid == chat.uid}
+                <div class="message my-message">
+                    <div class="text">
+                        {chat.message}
+                    </div>
+                </div>
+            {:else}
+                <div class="message other-message">
+                    <div class="avatar">
+                        <img alt="Profile" src="{chat.avatar}">
+                    </div>
+                    <div class="text">
+                        {chat.message}
+                    </div>
+                </div>
+            {/if}
+        {/each}
+    </div>
     <div class="form">
         <input type="text" bind:value={message}>
         <button on:click={sendMessage}>

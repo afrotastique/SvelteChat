@@ -6,6 +6,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
+//api key should be hidden in .env file but for now it is here
 const firebaseConfig = {
 
     apiKey: "AIzaSyAbvNPZfcp0DvOgAVXsRGhsvXU4ZxS91n8",
